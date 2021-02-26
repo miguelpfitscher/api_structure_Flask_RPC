@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      # the second part depends on FLASK_RUN_PORT in Dockerfile
+      - "3000:3000"
+    environment:
+      - FLASK_ENV=development
+      - GUNICORN_WORKERS=1
+      - GUNICORN_THREADS=2
+      - GUNICORN_TIMEOUT=480
+    networks:
+      - annotation_interface
+
+networks:
+  annotation_interface:
