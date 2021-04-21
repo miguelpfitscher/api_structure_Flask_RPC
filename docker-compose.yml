@@ -13,7 +13,7 @@ services:
       - GUNICORN_THREADS=2
       - GUNICORN_TIMEOUT=480
     networks:
-      - annotation_interface
+      - api
 
 networks:
-  annotation_interface:
+  api:

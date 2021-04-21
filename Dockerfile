@@ -15,4 +15,4 @@ CMD gunicorn --bind :${FLASK_RUN_PORT} \
  --threads ${GUNICORN_THREADS} \
  --timeout ${GUNICORN_TIMEOUT} \
  --access-logfile - \
- "annotation_api:create_app()"
+ "api:create_app()"
